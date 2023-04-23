@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-dinamyc',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-dinamyc.component.css']
 })
 export class TableDinamycComponent implements OnInit {
+  @Input() rowData: any[] = [];
+  @Input() columnData: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

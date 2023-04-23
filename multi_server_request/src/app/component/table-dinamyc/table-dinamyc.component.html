@@ -1,1 +1,9 @@
-<p>table-dinamyc works!</p>
+<table mat-table [dataSource]="rowData" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of columnData; let i = index" [matColumnDef]="i">
+        <th mat-header-cell *matHeaderCellDef>{{ column.header }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[column.key] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
