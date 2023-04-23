@@ -1,9 +1,18 @@
 <p>index-star works!</p>
 
 <div *ngIf="stars.length > 0; else noData">
-    <app-table-dinamyc [rowData]="stars" [columnData]="columns"></app-table-dinamyc>
+  <app-table-dinamyc [rowObjectData]="stars" [columnTitleData]="columns"></app-table-dinamyc>
+</div>
+
+<ng-template #noData>
+  <p *ngIf="!errorData">No hay datos disponibles para mostrar.</p>
+  <div *ngIf="errorData">
+    <p>Ha ocurrido un error al obtener los datos o no hay datos disponibles:</p>
+    <ul>
+      <li>Código de estado del servidor: {{ errorData.responseRequestStatusCode }}</li>
+      <li>Mensaje de respuesta del servidor: {{ errorData.responseRequestMessageResponse }}</li>
+      <li>Servidor remoto: {{ errorData.responseRequestRemoteServer }}</li>
+      <li>Marca de tiempo del servidor: {{ errorData.responseRequestTimestamp }}</li>
+    </ul>
   </div>
-  
-  <ng-template #noData>
-    <p>No hay datos disponibles para mostrar.</p>
-  </ng-template>
+</ng-template>
