@@ -1,1 +1,9 @@
 <p>index-star works!</p>
+
+<div *ngIf="stars.length > 0; else noData">
+    <app-table-dinamyc [rowData]="stars" [columnData]="columns"></app-table-dinamyc>
+  </div>
+  
+  <ng-template #noData>
+    <p>No hay datos disponibles para mostrar.</p>
+  </ng-template>
