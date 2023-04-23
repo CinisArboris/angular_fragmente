@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { IStar } from 'src/app/interface/istar';
 import { environment } from 'src/environments/environment';
 
@@ -12,8 +13,16 @@ export class StarService {
 
   constructor(private http: HttpClient) {}
 
-  getStarByName(name: string): Observable<IStar[]> {
-    const headers = { [environment.api_key_star.key]: environment.api_key_star.value };
-    return this.http.get<IStar[]>(this.API_URL + name, { headers });
+  getStarByName(nameStar: string): Observable<IStar[]> {
+    const headers = {
+      [environment.api_key_star.key]: environment.api_key_star.value,
+      'Content-Type': 'application/json',
+    };
+    return this.http.get<IStar[]>(this.API_URL + nameStar, { headers }).pipe(
+      catchError((error) => {
+        console.error('Error fetching star data:', error);
+        return throwError(error);
+      })
+    );
   }
 }
