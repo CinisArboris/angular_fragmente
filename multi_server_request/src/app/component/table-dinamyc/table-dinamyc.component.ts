@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./table-dinamyc.component.css']
 })
 export class TableDinamycComponent implements OnInit {
-  @Input() rowData: any[] = [];
-  @Input() columnData: any[] = [];
+  @Input() rowObjectData: any[] = [];
+  @Input() columnTitleData: any[] = [];
 
   constructor() { }
 
