@@ -81,7 +81,14 @@
               "browserTarget": "multi_server_request:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "browserTarget": "your-project-name:build",
+            "port": 4300,
+            "ssl": true,
+            "sslKey": "ssl/server.key",
+            "sslCert": "ssl/server.crt"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
