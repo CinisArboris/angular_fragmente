@@ -5,7 +5,11 @@
 Este repositorio contiene varias funcionalidades de prueba desarrolladas con Angular. Las funcionalidades incluyen: 
 - Request API
 - Servicios
-- Mapas
-- Tablas
+- Interface
+- Tablas dinamicas
+- Testing : unitario
+- Testing : e2e
+- Componentes
+- environment : production/development
 
 Estos proyectos de prácticas te ayudarán a familiarizarte y mejorar tus habilidades en Angular.
