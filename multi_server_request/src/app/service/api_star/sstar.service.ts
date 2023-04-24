@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable, catchError, throwError } from 'rxjs';
 import { IStar } from 'src/app/interface/istar';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class StarService {
+export class SStarService {
   private readonly API_URL = 'https://api.api-ninjas.com/v1/stars?name=';
 
   constructor(private http: HttpClient) {}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IStar } from 'src/app/interface/istar';
-import { StarService } from 'src/app/service/api_start/service-star.service';
 import { IErrorDinamyc } from 'src/app/interface/ierror-dinamyc';
+import { SStarService } from 'src/app/service/api_star/sstar.service';
 
 @Component({
   selector: 'app-index-star',
@@ -23,7 +23,7 @@ export class IndexStarComponent implements OnInit {
   ];
   nameStar: string = 'tau';
 
-  constructor(private starService: StarService) {}
+  constructor(private starService: SStarService) {}
 
   ngOnInit(): void {
     this.starService.getStarByName(this.nameStar).subscribe(
